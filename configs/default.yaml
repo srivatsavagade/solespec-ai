@@ -1,0 +1,10 @@
+project_name: SoleSpec AI
+units: mm
+seed: 42
+
+views:
+  - top
+  - side
+  - front
+  - back
+  - three_quarter

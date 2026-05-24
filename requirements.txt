@@ -1,0 +1,14 @@
+trimesh
+numpy
+pillow
+reportlab
+scikit-learn
+opencv-python
+pygltflib
+python-dotenv
+pyrender
+PyOpenGL
+pyglet
+langgraph
+langchain
+pytest

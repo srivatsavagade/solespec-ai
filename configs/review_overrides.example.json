@@ -1,0 +1,27 @@
+{
+  "components": [
+    {
+      "match": {
+        "mesh_name": "Object_0"
+      },
+      "name": "upper",
+      "material_name": "reviewed_upper_material",
+      "confidence": 0.9,
+      "notes": "Human-reviewed label; confirm construction details with factory sample."
+    }
+  ],
+  "materials": [
+    {
+      "match": {
+        "name": "material_0"
+      },
+      "name": "reviewed_upper_material",
+      "inferred_type": "mesh",
+      "color_standard_note": "Factory must confirm against approved Pantone/RAL or supplier swatch.",
+      "confidence": 0.9
+    }
+  ],
+  "notes": [
+    "Review overrides were applied before validation and PDF generation."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "run_completed_at": "2026-05-21T10:30:58.757836+00:00",
+  "input_path": "input\\used_new_balance_574_classic______free.glb",
+  "output_dir": "outputs",
+  "seed": 42,
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "selected_capabilities": [
+    "multi_view_rendering",
+    "geometry_measurement",
+    "material_colorway_extraction",
+    "retrieval_grounded_manufacturing_review",
+    "validation_confidence_scoring"
+  ],
+  "normalization": {
+    "scale_applied": true,
+    "original_length_mm_assuming_meters": 8182.91,
+    "target_length_mm": 280.0,
+    "scale_factor": 0.0342176562103202,
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+  },
+  "confidence_scores": {
+    "geometry": 0.82,
+    "material": 0.65,
+    "component": 0.35,
+    "factory_readiness": 0.53,
+    "rationale": [
+      "Geometry confidence reduced because scale normalization was required.",
+      "Component confidence reduced because the asset appears monolithic.",
+      "Factory readiness reduced by 0.08 due to medium/high validation findings."
+    ]
+  },
+  "outputs": [
+    "outputs\\schemas\\techpack_spec.json",
+    "outputs\\techpacks\\cover_sheet.pdf",
+    "outputs\\techpacks\\measurement_sheet.pdf",
+    "outputs\\techpacks\\bom_colorway_sheet.pdf",
+    "outputs\\techpacks\\validation_report.pdf"
+  ],
+  "validation_issue_count": 3
+}
