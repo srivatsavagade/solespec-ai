@@ -1,0 +1,42 @@
+{
+  "run_completed_at": "2026-05-24T09:09:13.595506+00:00",
+  "input_path": "input\\miles_morales_shoes.glb",
+  "output_dir": "outputs\\samples\\miles_morales_shoes",
+  "seed": 42,
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "selected_capabilities": [
+    "multi_view_rendering",
+    "geometry_measurement",
+    "material_colorway_extraction",
+    "technical_2d_drawings",
+    "retrieval_grounded_manufacturing_review",
+    "validation_confidence_scoring"
+  ],
+  "normalization": {
+    "scale_applied": true,
+    "original_length_mm_assuming_meters": 1988.28,
+    "target_length_mm": 280.0,
+    "scale_factor": 0.14082523178084505,
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+  },
+  "confidence_scores": {
+    "geometry": 0.82,
+    "material": 0.65,
+    "component": 0.35,
+    "factory_readiness": 0.61,
+    "rationale": [
+      "Geometry confidence reduced because scale normalization was required.",
+      "Component confidence reduced because the asset appears monolithic."
+    ]
+  },
+  "outputs": [
+    "outputs\\samples\\miles_morales_shoes\\schemas\\techpack_spec.json",
+    "outputs\\samples\\miles_morales_shoes\\techpacks\\cover_sheet.pdf",
+    "outputs\\samples\\miles_morales_shoes\\techpacks\\measurement_sheet.pdf",
+    "outputs\\samples\\miles_morales_shoes\\techpacks\\technical_drawing_sheet.pdf",
+    "outputs\\samples\\miles_morales_shoes\\techpacks\\bom_colorway_sheet.pdf",
+    "outputs\\samples\\miles_morales_shoes\\techpacks\\validation_report.pdf"
+  ],
+  "validation_issue_count": 1
+}

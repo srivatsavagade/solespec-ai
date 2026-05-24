@@ -1,0 +1,42 @@
+{
+  "run_completed_at": "2026-05-24T09:07:49.123316+00:00",
+  "input_path": "input\\flower_sneakers_shoe_scan.glb",
+  "output_dir": "outputs\\samples\\flower_sneakers_shoe_scan",
+  "seed": 42,
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "selected_capabilities": [
+    "multi_view_rendering",
+    "geometry_measurement",
+    "material_colorway_extraction",
+    "technical_2d_drawings",
+    "retrieval_grounded_manufacturing_review",
+    "validation_confidence_scoring"
+  ],
+  "normalization": {
+    "scale_applied": true,
+    "original_length_mm_assuming_meters": 26391.19,
+    "target_length_mm": 280.0,
+    "scale_factor": 0.01060959976445889,
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+  },
+  "confidence_scores": {
+    "geometry": 0.82,
+    "material": 0.65,
+    "component": 0.35,
+    "factory_readiness": 0.61,
+    "rationale": [
+      "Geometry confidence reduced because scale normalization was required.",
+      "Component confidence reduced because the asset appears monolithic."
+    ]
+  },
+  "outputs": [
+    "outputs\\samples\\flower_sneakers_shoe_scan\\schemas\\techpack_spec.json",
+    "outputs\\samples\\flower_sneakers_shoe_scan\\techpacks\\cover_sheet.pdf",
+    "outputs\\samples\\flower_sneakers_shoe_scan\\techpacks\\measurement_sheet.pdf",
+    "outputs\\samples\\flower_sneakers_shoe_scan\\techpacks\\technical_drawing_sheet.pdf",
+    "outputs\\samples\\flower_sneakers_shoe_scan\\techpacks\\bom_colorway_sheet.pdf",
+    "outputs\\samples\\flower_sneakers_shoe_scan\\techpacks\\validation_report.pdf"
+  ],
+  "validation_issue_count": 2
+}

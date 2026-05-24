@@ -1,0 +1,227 @@
+{
+  "model_name": "used_new_balance_574_classic______free",
+  "generated_at": "2026-05-24T09:06:02.443075+00:00",
+  "seed": 42,
+  "measurements": {
+    "length_mm": 280.0,
+    "width_mm": 112.2,
+    "height_mm": 126.53,
+    "heel_height_mm": 0.73,
+    "sole_thickness_mm": 12.6
+  },
+  "components": [
+    {
+      "name": "unknown_component",
+      "mesh_name": "Object_0",
+      "bbox_mm": {
+        "length": 280.0,
+        "height": 126.5287492906802,
+        "width": 112.19914962036168
+      },
+      "material_name": "material_0",
+      "confidence": 0.6,
+      "notes": "Heuristic component classification from mesh name and bounding box."
+    }
+  ],
+  "materials": [
+    {
+      "name": "material_0",
+      "base_color_rgb": [
+        155,
+        146,
+        145
+      ],
+      "base_color_hex": "#9B9291",
+      "dominant_colors_rgb": [
+        [
+          155,
+          146,
+          145
+        ],
+        [
+          56,
+          57,
+          69
+        ],
+        [
+          184,
+          170,
+          162
+        ],
+        [
+          124,
+          118,
+          122
+        ],
+        [
+          89,
+          84,
+          90
+        ]
+      ],
+      "dominant_colors_hex": [
+        "#9B9291",
+        "#383945",
+        "#B8AAA2",
+        "#7C767A",
+        "#59545A"
+      ],
+      "color_source": "texture_dominant_color",
+      "color_standard_note": "Pantone/RAL mapping not implemented; factory should confirm approved color standard.",
+      "inferred_type": "synthetic_or_unknown",
+      "confidence": 0.65
+    }
+  ],
+  "renders": [
+    {
+      "view_name": "top",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\top.png"
+    },
+    {
+      "view_name": "side",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\side.png"
+    },
+    {
+      "view_name": "front",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\front.png"
+    },
+    {
+      "view_name": "back",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\back.png"
+    },
+    {
+      "view_name": "perspective",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\perspective.png"
+    }
+  ],
+  "normalization_metadata": {
+    "scale_applied": true,
+    "original_length_mm_assuming_meters": 8182.91,
+    "target_length_mm": 280.0,
+    "scale_factor": 0.0342176562103202,
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+  },
+  "confidence_scores": {
+    "geometry": 0.82,
+    "material": 0.65,
+    "component": 0.35,
+    "factory_readiness": 0.61,
+    "rationale": [
+      "Geometry confidence reduced because scale normalization was required.",
+      "Component confidence reduced because the asset appears monolithic."
+    ]
+  },
+  "manufacturing_evidence": [
+    {
+      "rule_id": "GEO-002",
+      "title": "Heel and Sole Plausibility Checks",
+      "text": "Athletic footwear with high heel height or very thin sole estimates should be reviewed by product engineering. Heel height, outsole thickness, midsole stack, and ground contact profile affect comfort, stability, tooling, and production feasibility.",
+      "score": 0.1065
+    },
+    {
+      "rule_id": "SEG-001",
+      "title": "Component Segmentation Confidence",
+      "text": "Monolithic meshes should not be force-labeled as upper, laces, tongue, midsole, or outsole. Report segmentation uncertainty and request cleaner component hierarchy, material groups, or CAD source files for production-grade BOM extraction.",
+      "score": 0.053
+    },
+    {
+      "rule_id": "MAT-002",
+      "title": "Material Metadata Completeness",
+      "text": "If a GLB lacks explicit material type, supplier code, or texture source metadata, mark material confidence as limited. Do not infer leather, mesh, foam, or rubber beyond what material names, textures, or source documentation support.",
+      "score": 0.0228
+    },
+    {
+      "rule_id": "MAT-001",
+      "title": "Colorway Approval",
+      "text": "RGB or texture-derived colors are useful for review but are not final factory color standards. Factory handoff should confirm approved Pantone, RAL, material swatch, or brand color code before production.",
+      "score": 0.0122
+    }
+  ],
+  "run_manifest": {
+    "run_completed_at": "2026-05-24T09:06:02.463866+00:00",
+    "input_path": "input\\used_new_balance_574_classic______free.glb",
+    "output_dir": "outputs\\samples\\used_new_balance_574_classic______free",
+    "seed": 42,
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "selected_capabilities": [
+      "multi_view_rendering",
+      "geometry_measurement",
+      "material_colorway_extraction",
+      "technical_2d_drawings",
+      "retrieval_grounded_manufacturing_review",
+      "validation_confidence_scoring"
+    ],
+    "normalization": {
+      "scale_applied": true,
+      "original_length_mm_assuming_meters": 8182.91,
+      "target_length_mm": 280.0,
+      "scale_factor": 0.0342176562103202,
+      "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+    },
+    "confidence_scores": {
+      "geometry": 0.82,
+      "material": 0.65,
+      "component": 0.35,
+      "factory_readiness": 0.61,
+      "rationale": [
+        "Geometry confidence reduced because scale normalization was required.",
+        "Component confidence reduced because the asset appears monolithic."
+      ]
+    },
+    "outputs": [
+      "outputs\\samples\\used_new_balance_574_classic______free\\schemas\\techpack_spec.json",
+      "outputs\\samples\\used_new_balance_574_classic______free\\techpacks\\cover_sheet.pdf",
+      "outputs\\samples\\used_new_balance_574_classic______free\\techpacks\\measurement_sheet.pdf",
+      "outputs\\samples\\used_new_balance_574_classic______free\\techpacks\\technical_drawing_sheet.pdf",
+      "outputs\\samples\\used_new_balance_574_classic______free\\techpacks\\bom_colorway_sheet.pdf",
+      "outputs\\samples\\used_new_balance_574_classic______free\\techpacks\\validation_report.pdf"
+    ],
+    "validation_issue_count": 2
+  },
+  "annotated_renders": [
+    {
+      "view_name": "side_measurements",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\annotated\\side_measurements.png"
+    },
+    {
+      "view_name": "technical_side",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\technical_drawings\\side_technical_drawing.png"
+    },
+    {
+      "view_name": "technical_top",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\technical_drawings\\top_technical_drawing.png"
+    },
+    {
+      "view_name": "technical_front",
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\technical_drawings\\front_technical_drawing.png"
+    }
+  ],
+  "validation_issues": [
+    {
+      "severity": "low",
+      "category": "construction",
+      "message": "Sole thickness estimate is slim; confirm outsole and midsole construction requirements."
+    },
+    {
+      "severity": "low",
+      "category": "segmentation",
+      "message": "Input asset was monolithic and lacked semantic segmentation metadata."
+    }
+  ],
+  "manufacturing_notes": [
+    "Verify all measurements against physical production sample before mass manufacturing.",
+    "Use extracted component and material table as the primary BOM reference.",
+    "Maintain consistent color matching across upper, sole, and accessory components.",
+    "Inspect stitching, bonding, and edge finishing during QA.",
+    "Detected components for factory review: unknown_component.",
+    "Review notes are grounded in retrieved manufacturing guidelines: GEO-002, SEG-001, MAT-002.",
+    "Factory readiness confidence score: 0.61.",
+    "QA should verify normalized dimensions against a physical reference sample before production release.",
+    "Colorway values were estimated from available GLB material or texture data; factory should confirm against approved color standards.",
+    "Component segmentation confidence is low because the source asset is monolithic.",
+    "Sole thickness estimate is slim; confirm outsole and midsole construction requirements.",
+    "Manufacturing review grounded against retrieved guideline(s): GEO-002, SEG-001, MAT-002.",
+    "Factory readiness confidence score: 0.61."
+  ]
+}

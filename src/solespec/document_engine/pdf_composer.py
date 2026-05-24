@@ -31,33 +31,20 @@ class PDFComposer:
             height - 22 * mm,
             f"Generated: {self._format_timestamp(spec.generated_at)}",
         )
-        self._draw_revision_block(c, width - 64 * mm, height - 34 * mm)
 
         perspective = self._find_render(spec.renders, "perspective")
         self._draw_image(
             c,
             perspective,
-            x=22 * mm,
-            y=height - 145 * mm,
-            box_width=166 * mm,
-            box_height=96 * mm,
+            x=18 * mm,
+            y=height - 160 * mm,
+            box_width=174 * mm,
+            box_height=118 * mm,
         )
 
-        self._draw_measurement_summary(
-            c,
-            spec,
-            x=24 * mm,
-            y=height - 172 * mm,
-            table_width=162 * mm,
-        )
-
-        self._draw_section_title(c, "Review Scope", 24 * mm, height - 212 * mm)
-        assumptions = [
-            "Measurements are derived from normalized geometry and reported in millimeters.",
-            "Colorway values are extracted from available material or texture data when present.",
-            "Factory teams should confirm dimensions, color standards, and materials before production.",
-        ]
-        self._draw_bullets(c, assumptions, 28 * mm, height - 226 * mm, max_width=150 * mm)
+        self._draw_cover_metric_strip(c, spec, 18 * mm, height - 198 * mm, 174 * mm)
+        self._draw_revision_block(c, 18 * mm, height - 228 * mm)
+        self._draw_confidence_summary(c, spec, 78 * mm, height - 228 * mm, 114 * mm)
 
         self._draw_footer(c)
         c.showPage()
@@ -330,6 +317,61 @@ class PDFComposer:
             c.setFillColor(colors.HexColor("#111111"))
             c.drawRightString(x + table_width - 3 * mm, current_y, value)
             current_y -= row_height
+
+    def _draw_cover_metric_strip(self, c: canvas.Canvas, spec: TechPackSpec, x: float, y: float, width: float) -> None:
+        metrics = [
+            ("Length", spec.measurements.length_mm),
+            ("Width", spec.measurements.width_mm),
+            ("Height", spec.measurements.height_mm),
+            ("Heel", spec.measurements.heel_height_mm),
+        ]
+        column_width = width / len(metrics)
+        strip_height = 20 * mm
+
+        c.setFillColor(colors.white)
+        c.setStrokeColor(colors.HexColor("#D6D6D6"))
+        c.roundRect(x, y - strip_height, width, strip_height, 2 * mm, fill=1, stroke=1)
+
+        for index, (label, value) in enumerate(metrics):
+            cell_x = x + index * column_width
+            if index:
+                c.setStrokeColor(colors.HexColor("#E8E8E8"))
+                c.line(cell_x, y - strip_height + 3 * mm, cell_x, y - 3 * mm)
+
+            c.setFont("Helvetica", 7.5)
+            c.setFillColor(colors.HexColor("#666666"))
+            c.drawString(cell_x + 5 * mm, y - 7 * mm, label)
+            c.setFont("Helvetica-Bold", 13)
+            c.setFillColor(colors.HexColor("#111111"))
+            c.drawString(cell_x + 5 * mm, y - 15 * mm, self._format_measurement_value(value))
+
+    def _draw_confidence_summary(
+        self,
+        c: canvas.Canvas,
+        spec: TechPackSpec,
+        x: float,
+        y: float,
+        width: float,
+    ) -> None:
+        c.setFillColor(colors.HexColor("#FAFAF8"))
+        c.setStrokeColor(colors.HexColor("#E0E0DC"))
+        c.roundRect(x, y - 18 * mm, width, 18 * mm, 2 * mm, fill=1, stroke=1)
+
+        readiness = None
+        if spec.confidence_scores:
+            readiness = spec.confidence_scores.factory_readiness
+
+        c.setFont("Helvetica", 7.5)
+        c.setFillColor(colors.HexColor("#666666"))
+        c.drawString(x + 4 * mm, y - 6 * mm, "Factory readiness")
+        c.setFont("Helvetica-Bold", 12)
+        c.setFillColor(colors.HexColor("#111111"))
+        readiness_text = f"{readiness:.2f}" if readiness is not None else "Review needed"
+        c.drawString(x + 4 * mm, y - 14 * mm, readiness_text)
+
+        c.setFont("Helvetica", 8)
+        c.setFillColor(colors.HexColor("#555555"))
+        c.drawRightString(x + width - 4 * mm, y - 14 * mm, "Confirm dimensions, colors, and materials")
 
     def _draw_header(self, c: canvas.Canvas, title: str, model_name: str) -> None:
         width, height = A4
@@ -629,6 +671,12 @@ class PDFComposer:
             return "Not available"
 
         return f"{rgb[0]}, {rgb[1]}, {rgb[2]}"
+
+    def _format_measurement_value(self, value: float | None) -> str:
+        if value is None:
+            return "N/A"
+
+        return f"{value:.0f} mm"
 
     def _method_assumptions(self, spec: TechPackSpec) -> list[str]:
         metadata = spec.normalization_metadata or {}

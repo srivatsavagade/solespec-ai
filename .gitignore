@@ -24,6 +24,8 @@ outputs/technical_drawings/*
 outputs/techpacks/*
 !outputs/techpacks/*.pdf
 outputs/intermediate/
+!outputs/samples/
+outputs/samples/*/intermediate/
 outputs_*/
 *.log
 *.err.log

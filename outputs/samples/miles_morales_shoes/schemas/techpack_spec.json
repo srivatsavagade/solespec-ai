@@ -1,0 +1,215 @@
+{
+  "model_name": "miles_morales_shoes",
+  "generated_at": "2026-05-24T09:09:13.591268+00:00",
+  "seed": 42,
+  "measurements": {
+    "length_mm": 280.0,
+    "width_mm": 106.13,
+    "height_mm": 175.14,
+    "heel_height_mm": 14.66,
+    "sole_thickness_mm": 17.49
+  },
+  "components": [
+    {
+      "name": "unknown_component",
+      "mesh_name": "Object_0",
+      "bbox_mm": {
+        "length": 280.0,
+        "height": 175.14180130082903,
+        "width": 106.1318083168784
+      },
+      "material_name": "material_0",
+      "confidence": 0.6,
+      "notes": "Heuristic component classification from mesh name and bounding box."
+    }
+  ],
+  "materials": [
+    {
+      "name": "material_0",
+      "base_color_rgb": [
+        149,
+        62,
+        67
+      ],
+      "base_color_hex": "#953E43",
+      "dominant_colors_rgb": [
+        [
+          149,
+          62,
+          67
+        ],
+        [
+          216,
+          215,
+          218
+        ],
+        [
+          134,
+          35,
+          44
+        ],
+        [
+          22,
+          18,
+          18
+        ],
+        [
+          114,
+          55,
+          58
+        ]
+      ],
+      "dominant_colors_hex": [
+        "#953E43",
+        "#D8D7DA",
+        "#86232C",
+        "#161212",
+        "#72373A"
+      ],
+      "color_source": "texture_dominant_color",
+      "color_standard_note": "Pantone/RAL mapping not implemented; factory should confirm approved color standard.",
+      "inferred_type": "synthetic_or_unknown",
+      "confidence": 0.65
+    }
+  ],
+  "renders": [
+    {
+      "view_name": "top",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\top.png"
+    },
+    {
+      "view_name": "side",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\side.png"
+    },
+    {
+      "view_name": "front",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\front.png"
+    },
+    {
+      "view_name": "back",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\back.png"
+    },
+    {
+      "view_name": "perspective",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\perspective.png"
+    }
+  ],
+  "normalization_metadata": {
+    "scale_applied": true,
+    "original_length_mm_assuming_meters": 1988.28,
+    "target_length_mm": 280.0,
+    "scale_factor": 0.14082523178084505,
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+  },
+  "confidence_scores": {
+    "geometry": 0.82,
+    "material": 0.65,
+    "component": 0.35,
+    "factory_readiness": 0.61,
+    "rationale": [
+      "Geometry confidence reduced because scale normalization was required.",
+      "Component confidence reduced because the asset appears monolithic."
+    ]
+  },
+  "manufacturing_evidence": [
+    {
+      "rule_id": "GEO-002",
+      "title": "Heel and Sole Plausibility Checks",
+      "text": "Athletic footwear with high heel height or very thin sole estimates should be reviewed by product engineering. Heel height, outsole thickness, midsole stack, and ground contact profile affect comfort, stability, tooling, and production feasibility.",
+      "score": 0.0739
+    },
+    {
+      "rule_id": "SEG-001",
+      "title": "Component Segmentation Confidence",
+      "text": "Monolithic meshes should not be force-labeled as upper, laces, tongue, midsole, or outsole. Report segmentation uncertainty and request cleaner component hierarchy, material groups, or CAD source files for production-grade BOM extraction.",
+      "score": 0.039
+    },
+    {
+      "rule_id": "MAT-002",
+      "title": "Material Metadata Completeness",
+      "text": "If a GLB lacks explicit material type, supplier code, or texture source metadata, mark material confidence as limited. Do not infer leather, mesh, foam, or rubber beyond what material names, textures, or source documentation support.",
+      "score": 0.025
+    }
+  ],
+  "run_manifest": {
+    "run_completed_at": "2026-05-24T09:09:13.595506+00:00",
+    "input_path": "input\\miles_morales_shoes.glb",
+    "output_dir": "outputs\\samples\\miles_morales_shoes",
+    "seed": 42,
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "selected_capabilities": [
+      "multi_view_rendering",
+      "geometry_measurement",
+      "material_colorway_extraction",
+      "technical_2d_drawings",
+      "retrieval_grounded_manufacturing_review",
+      "validation_confidence_scoring"
+    ],
+    "normalization": {
+      "scale_applied": true,
+      "original_length_mm_assuming_meters": 1988.28,
+      "target_length_mm": 280.0,
+      "scale_factor": 0.14082523178084505,
+      "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+    },
+    "confidence_scores": {
+      "geometry": 0.82,
+      "material": 0.65,
+      "component": 0.35,
+      "factory_readiness": 0.61,
+      "rationale": [
+        "Geometry confidence reduced because scale normalization was required.",
+        "Component confidence reduced because the asset appears monolithic."
+      ]
+    },
+    "outputs": [
+      "outputs\\samples\\miles_morales_shoes\\schemas\\techpack_spec.json",
+      "outputs\\samples\\miles_morales_shoes\\techpacks\\cover_sheet.pdf",
+      "outputs\\samples\\miles_morales_shoes\\techpacks\\measurement_sheet.pdf",
+      "outputs\\samples\\miles_morales_shoes\\techpacks\\technical_drawing_sheet.pdf",
+      "outputs\\samples\\miles_morales_shoes\\techpacks\\bom_colorway_sheet.pdf",
+      "outputs\\samples\\miles_morales_shoes\\techpacks\\validation_report.pdf"
+    ],
+    "validation_issue_count": 1
+  },
+  "annotated_renders": [
+    {
+      "view_name": "side_measurements",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\annotated\\side_measurements.png"
+    },
+    {
+      "view_name": "technical_side",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\technical_drawings\\side_technical_drawing.png"
+    },
+    {
+      "view_name": "technical_top",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\technical_drawings\\top_technical_drawing.png"
+    },
+    {
+      "view_name": "technical_front",
+      "image_path": "outputs\\samples\\miles_morales_shoes\\technical_drawings\\front_technical_drawing.png"
+    }
+  ],
+  "validation_issues": [
+    {
+      "severity": "low",
+      "category": "segmentation",
+      "message": "Input asset was monolithic and lacked semantic segmentation metadata."
+    }
+  ],
+  "manufacturing_notes": [
+    "Verify all measurements against physical production sample before mass manufacturing.",
+    "Use extracted component and material table as the primary BOM reference.",
+    "Maintain consistent color matching across upper, sole, and accessory components.",
+    "Inspect stitching, bonding, and edge finishing during QA.",
+    "Detected components for factory review: unknown_component.",
+    "Review notes are grounded in retrieved manufacturing guidelines: GEO-002, SEG-001, MAT-002.",
+    "Factory readiness confidence score: 0.61.",
+    "QA should verify normalized dimensions against a physical reference sample before production release.",
+    "Colorway values were estimated from available GLB material or texture data; factory should confirm against approved color standards.",
+    "Component segmentation confidence is low because the source asset is monolithic.",
+    "Manufacturing review grounded against retrieved guideline(s): GEO-002, SEG-001, MAT-002.",
+    "Factory readiness confidence score: 0.61."
+  ]
+}

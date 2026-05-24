@@ -259,11 +259,25 @@ Deterministic systems handle correctness-critical geometry, while bounded agenti
 
 ## Outputs
 
-- [Cover sheet](outputs/techpacks/cover_sheet.pdf)
-- [Measurement sheet](outputs/techpacks/measurement_sheet.pdf)
-- [BOM / colorway sheet](outputs/techpacks/bom_colorway_sheet.pdf)
-- [Validation report](outputs/techpacks/validation_report.pdf)
-- [Structured schema](outputs/schemas/techpack_spec.json)
+The repository includes generated TechPacks for all three supplied GLB inputs:
+
+| Input asset | Generated output folder |
+| --- | --- |
+| `used_new_balance_574_classic______free.glb` | [outputs/samples/used_new_balance_574_classic______free/techpacks](outputs/samples/used_new_balance_574_classic______free/techpacks) |
+| `flower_sneakers_shoe_scan.glb` | [outputs/samples/flower_sneakers_shoe_scan/techpacks](outputs/samples/flower_sneakers_shoe_scan/techpacks) |
+| `miles_morales_shoes.glb` | [outputs/samples/miles_morales_shoes/techpacks](outputs/samples/miles_morales_shoes/techpacks) |
+
+Each sample folder contains:
+
+- `cover_sheet.pdf`
+- `measurement_sheet.pdf`
+- `technical_drawing_sheet.pdf`
+- `bom_colorway_sheet.pdf`
+- `validation_report.pdf`
+- `schemas/techpack_spec.json`
+- `schemas/run_manifest.json`
+
+The top-level [outputs/techpacks](outputs/techpacks) folder is kept as the primary single-sample preview for the New Balance input.
 
 ## Visual Outputs
 
@@ -279,9 +293,7 @@ The TechPack PDFs use color render views for product reference. The black-and-wh
 
 ### Multi-Asset Validation
 
-![Multi-asset validation collage](outputs/comparison_collage.png)
-
-The validation engine produces different manufacturing concerns depending on the geometry and metadata quality of each GLB asset.
+The validation engine produces different manufacturing concerns depending on the geometry and metadata quality of each GLB asset. The generated report for each input is stored in that input's `outputs/samples/<asset>/techpacks/validation_report.pdf` folder.
 
 | Asset | Observed Behavior |
 | --- | --- |
@@ -688,7 +700,7 @@ Or use the Windows demo helper:
 .\run_demo.ps1
 ```
 
-Expected runtime is roughly 1-3 minutes on a laptop, mostly spent in Blender rendering.
+The helper runs all three included GLB inputs and writes each result to `outputs/samples/<asset-name>/`. Expected runtime is roughly 5-7 minutes on a laptop, mostly spent in Blender rendering.
 
 The pipeline exports a normalized intermediate GLB before rendering:
 
@@ -716,6 +728,20 @@ This keeps production-critical geometry deterministic while using ML-style retri
 
 ```text
 outputs/
+|-- samples/
+|   |-- used_new_balance_574_classic______free/
+|   |-- flower_sneakers_shoe_scan/
+|   `-- miles_morales_shoes/
+|       |-- renders/
+|       |-- annotated/
+|       |-- technical_drawings/
+|       |-- schemas/
+|       `-- techpacks/
+|           |-- cover_sheet.pdf
+|           |-- measurement_sheet.pdf
+|           |-- technical_drawing_sheet.pdf
+|           |-- bom_colorway_sheet.pdf
+|           `-- validation_report.pdf
 |-- intermediate/
 |   `-- <model>_normalized.glb
 |-- blender_renders/

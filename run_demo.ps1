@@ -7,12 +7,26 @@ if (-not $env:BLENDER_EXECUTABLE) {
     }
 }
 
-.\.venv\Scripts\python.exe -B agentic_main.py `
-    --input input\used_new_balance_574_classic______free.glb `
-    --output outputs
+$inputs = @(
+    "input\used_new_balance_574_classic______free.glb",
+    "input\flower_sneakers_shoe_scan.glb",
+    "input\miles_morales_shoes.glb"
+)
 
-# To run with reviewer corrections:
+foreach ($inputPath in $inputs) {
+    $name = [System.IO.Path]::GetFileNameWithoutExtension($inputPath)
+    $outputDir = "outputs\samples\$name"
+
+    Write-Host ""
+    Write-Host "Generating TechPack for $name"
+
+    .\.venv\Scripts\python.exe -B agentic_main.py `
+        --input $inputPath `
+        --output $outputDir
+}
+
+# To run one sample with reviewer corrections:
 # .\.venv\Scripts\python.exe -B agentic_main.py `
 #     --input input\used_new_balance_574_classic______free.glb `
-#     --output outputs `
+#     --output outputs\samples\used_new_balance_574_classic______free `
 #     --review-overrides configs\review_overrides.example.json
