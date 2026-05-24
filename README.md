@@ -652,9 +652,21 @@ The pipeline was shaped around real GLB constraints: coordinate ambiguity, scale
 
 ## Setup
 
+Download or clone the full repository before running the demo. `run_demo.ps1` is only a helper script; it will not run by itself if downloaded alone because it depends on `agentic_main.py`, the `src/` package, the `input/` GLB assets, and the installed Python environment.
+
+Recommended GitHub setup:
+
+```powershell
+git clone https://github.com/srivatsavagade/solespec-ai.git
+cd solespec-ai
+git lfs pull
+```
+
+The input `.glb` files are stored with Git LFS. If the repo is downloaded as a ZIP or cloned without LFS, the GLB files may be tiny pointer files instead of real 3D assets, and the pipeline will fail during loading/rendering.
+
 Use Python 3.10 for the project environment. Some rendering/test dependencies are not available for the accidental Python 3.14 virtualenv path on Windows yet.
 
-```bash
+```powershell
 py -3.10 -m venv .venv310
 .venv310\Scripts\activate
 pip install -r requirements.txt
@@ -696,7 +708,7 @@ python -B agentic_main.py --input input/used_new_balance_574_classic______free.g
 
 Review overrides are JSON files that match extracted components by `mesh_name` and materials by `name`. This lets a reviewer correct labels such as `unknown_component` to `upper`, raise confidence after inspection, or replace generic material names with factory-facing labels while keeping the original automated extraction path intact.
 
-Or use the Windows demo helper:
+Or use the Windows demo helper after completing the setup above:
 
 ```powershell
 .\run_demo.ps1
