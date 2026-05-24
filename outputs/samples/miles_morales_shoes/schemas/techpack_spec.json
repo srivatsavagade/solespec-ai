@@ -1,6 +1,6 @@
 {
   "model_name": "miles_morales_shoes",
-  "generated_at": "2026-05-24T10:14:09.289655+00:00",
+  "generated_at": "2026-05-24T13:29:32.930506+00:00",
   "seed": 42,
   "measurements": {
     "length_mm": 280.0,
@@ -99,7 +99,10 @@
     "original_length_mm_assuming_meters": 1988.28,
     "target_length_mm": 280.0,
     "scale_factor": 0.14082523178084505,
-    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length.",
+    "orientation_override": {
+      "applied": false
+    }
   },
   "confidence_scores": {
     "geometry": 0.82,
@@ -132,7 +135,7 @@
     }
   ],
   "run_manifest": {
-    "run_completed_at": "2026-05-24T10:14:09.294687+00:00",
+    "run_completed_at": "2026-05-24T13:29:32.935507+00:00",
     "input_path": "input\\miles_morales_shoes.glb",
     "output_dir": "outputs\\samples\\miles_morales_shoes",
     "seed": 42,
@@ -151,7 +154,10 @@
       "original_length_mm_assuming_meters": 1988.28,
       "target_length_mm": 280.0,
       "scale_factor": 0.14082523178084505,
-      "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+      "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length.",
+      "orientation_override": {
+        "applied": false
+      }
     },
     "confidence_scores": {
       "geometry": 0.82,

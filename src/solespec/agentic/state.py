@@ -6,6 +6,7 @@ class TechPackState(TypedDict, total=False):
     output_dir: str
     seed: int
     review_overrides_path: str
+    orientation_overrides_path: str
     scene: Any
     scale_metadata: dict[str, Any]
     measurements: Any

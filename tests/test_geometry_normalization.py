@@ -9,6 +9,7 @@ import trimesh
 from src.solespec.geometry_engine.footwear_measurements import FootwearMeasurementEngine
 from src.solespec.geometry_engine.geometry_analyzer import GeometryAnalyzer
 from src.solespec.material_engine.material_analyzer import MaterialAnalyzer
+from src.solespec.normalization.orientation_overrides import apply_orientation_overrides
 from src.solespec.normalization.scale_normalizer import ScaleNormalizer
 from src.solespec.review.overrides import apply_review_overrides
 from src.solespec.schemas.techpack_schema import ComponentSpec, MaterialSpec
@@ -46,6 +47,50 @@ class ScaleNormalizerTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "zero length"):
             ScaleNormalizer().normalize(scene)
+
+
+class OrientationOverrideTests(unittest.TestCase):
+    def test_swap_yz_orientation_override_is_asset_scoped(self):
+        mesh = trimesh.creation.box(extents=[2.0, 4.0, 6.0])
+        scene = trimesh.Scene(mesh)
+
+        corrected, metadata = apply_orientation_overrides(
+            scene=scene,
+            input_path=Path("flower_sneakers_shoe_scan.glb"),
+            overrides={
+                "assets": {
+                    "flower_sneakers_shoe_scan": {
+                        "operations": ["swap_yz"],
+                        "reason": "test",
+                    }
+                }
+            },
+        )
+
+        corrected_size = corrected.bounds[1] - corrected.bounds[0]
+        self.assertTrue(metadata["applied"])
+        self.assertEqual(metadata["operations"], ["swap_yz"])
+        self.assertAlmostEqual(corrected_size[1], 6.0)
+        self.assertAlmostEqual(corrected_size[2], 4.0)
+
+    def test_missing_orientation_override_does_not_modify_scene(self):
+        mesh = trimesh.creation.box(extents=[2.0, 4.0, 6.0])
+        scene = trimesh.Scene(mesh)
+
+        corrected, metadata = apply_orientation_overrides(
+            scene=scene,
+            input_path=Path("other_asset.glb"),
+            overrides={
+                "assets": {
+                    "flower_sneakers_shoe_scan": {
+                        "operations": ["swap_yz"],
+                    }
+                }
+            },
+        )
+
+        self.assertFalse(metadata["applied"])
+        self.assertTrue((corrected.bounds == scene.bounds).all())
 
 
 class FootwearMeasurementEngineTests(unittest.TestCase):

@@ -27,7 +27,8 @@ foreach ($inputPath in $inputs) {
 
     & $pythonExe -B agentic_main.py `
         --input $inputPath `
-        --output $outputDir
+        --output $outputDir `
+        --orientation-overrides configs\orientation_overrides.json
 }
 
 # To run one sample with reviewer corrections:

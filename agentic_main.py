@@ -18,6 +18,10 @@ def parse_args():
         "--review-overrides",
         help="Optional JSON file with human-reviewed component/material overrides",
     )
+    parser.add_argument(
+        "--orientation-overrides",
+        help="Optional JSON file with asset-specific orientation corrections",
+    )
     return parser.parse_args()
 
 
@@ -34,6 +38,9 @@ def main():
             "output_dir": str(Path(args.output)),
             "seed": args.seed,
             "review_overrides_path": str(Path(args.review_overrides)) if args.review_overrides else None,
+            "orientation_overrides_path": (
+                str(Path(args.orientation_overrides)) if args.orientation_overrides else None
+            ),
         }
     )
 

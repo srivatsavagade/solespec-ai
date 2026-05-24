@@ -1,0 +1,10 @@
+{
+  "assets": {
+    "flower_sneakers_shoe_scan": {
+      "operations": [
+        "swap_yz"
+      ],
+      "reason": "Consumer scan exports height and width ambiguously after length alignment; swap Y/Z after automatic normalization so Blender top and side views match footwear presentation."
+    }
+  }
+}

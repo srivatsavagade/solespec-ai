@@ -26,6 +26,10 @@ from src.solespec.review.overrides import (
     apply_review_overrides,
     load_review_overrides,
 )
+from src.solespec.normalization.orientation_overrides import (
+    apply_orientation_overrides,
+    load_orientation_overrides,
+)
 from src.solespec.geometry_engine.footwear_measurements import (
     FootwearMeasurementEngine
 )
@@ -40,19 +44,30 @@ class TechPackPipeline:
         output_dir: Path,
         seed: int = 42,
         review_overrides_path: Path | None = None,
+        orientation_overrides_path: Path | None = None,
     ):
         self.input_path = input_path
         self.output_dir = output_dir
         self.seed = seed
         self.review_overrides_path = review_overrides_path
+        self.orientation_overrides_path = orientation_overrides_path
 
     def run(self) -> TechPackSpec:
         self._set_seed()
 
         scene = GLBLoader().load(self.input_path)
         scene = SceneNormalizer().normalize(scene)
+        orientation_overrides = load_orientation_overrides(
+            self.orientation_overrides_path
+        )
+        scene, orientation_metadata = apply_orientation_overrides(
+            scene=scene,
+            input_path=self.input_path,
+            overrides=orientation_overrides,
+        )
 
         scene, scale_metadata = ScaleNormalizer(target_length_mm=280.0).normalize(scene)
+        scale_metadata["orientation_override"] = orientation_metadata
         print("Scale metadata:", scale_metadata)
 
         geometry_engine = GeometryAnalyzer()

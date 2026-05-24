@@ -708,6 +708,8 @@ python -B agentic_main.py --input input/used_new_balance_574_classic______free.g
 
 Review overrides are JSON files that match extracted components by `mesh_name` and materials by `name`. This lets a reviewer correct labels such as `unknown_component` to `upper`, raise confidence after inspection, or replace generic material names with factory-facing labels while keeping the original automated extraction path intact.
 
+Some consumer scans also need explicit orientation correction after automatic normalization. The demo uses `configs/orientation_overrides.json` to apply a documented `swap_yz` correction only to `flower_sneakers_shoe_scan`, so its Blender top and side renders match footwear presentation without changing the other two samples.
+
 Or use the Windows demo helper after completing the setup above:
 
 ```powershell

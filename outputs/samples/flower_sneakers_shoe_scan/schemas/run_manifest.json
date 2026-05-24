@@ -1,5 +1,5 @@
 {
-  "run_completed_at": "2026-05-24T10:12:45.656715+00:00",
+  "run_completed_at": "2026-05-24T13:28:08.341953+00:00",
   "input_path": "input\\flower_sneakers_shoe_scan.glb",
   "output_dir": "outputs\\samples\\flower_sneakers_shoe_scan",
   "seed": 42,
@@ -18,7 +18,15 @@
     "original_length_mm_assuming_meters": 26391.19,
     "target_length_mm": 280.0,
     "scale_factor": 0.01060959976445889,
-    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length.",
+    "orientation_override": {
+      "applied": true,
+      "asset": "flower_sneakers_shoe_scan",
+      "operations": [
+        "swap_yz"
+      ],
+      "reason": "Consumer scan exports height and width ambiguously after length alignment; swap Y/Z after automatic normalization so Blender top and side views match footwear presentation."
+    }
   },
   "confidence_scores": {
     "geometry": 0.82,

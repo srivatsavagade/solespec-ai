@@ -1,13 +1,13 @@
 {
   "model_name": "flower_sneakers_shoe_scan",
-  "generated_at": "2026-05-24T10:12:45.652711+00:00",
+  "generated_at": "2026-05-24T13:28:08.305941+00:00",
   "seed": 42,
   "measurements": {
     "length_mm": 280.0,
-    "width_mm": 105.17,
-    "height_mm": 105.44,
-    "heel_height_mm": 19.42,
-    "sole_thickness_mm": 10.53
+    "width_mm": 105.44,
+    "height_mm": 105.17,
+    "heel_height_mm": 0.0,
+    "sole_thickness_mm": 10.5
   },
   "components": [
     {
@@ -15,8 +15,8 @@
       "mesh_name": "Object_0",
       "bbox_mm": {
         "length": 280.0,
-        "height": 105.44371071864691,
-        "width": 105.16797656936562
+        "height": 105.1679765693656,
+        "width": 105.44371071864691
       },
       "material_name": "Seavees_u1_v1",
       "confidence": 0.6,
@@ -99,7 +99,15 @@
     "original_length_mm_assuming_meters": 26391.19,
     "target_length_mm": 280.0,
     "scale_factor": 0.01060959976445889,
-    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length.",
+    "orientation_override": {
+      "applied": true,
+      "asset": "flower_sneakers_shoe_scan",
+      "operations": [
+        "swap_yz"
+      ],
+      "reason": "Consumer scan exports height and width ambiguously after length alignment; swap Y/Z after automatic normalization so Blender top and side views match footwear presentation."
+    }
   },
   "confidence_scores": {
     "geometry": 0.82,
@@ -116,29 +124,29 @@
       "rule_id": "GEO-002",
       "title": "Heel and Sole Plausibility Checks",
       "text": "Athletic footwear with high heel height or very thin sole estimates should be reviewed by product engineering. Heel height, outsole thickness, midsole stack, and ground contact profile affect comfort, stability, tooling, and production feasibility.",
-      "score": 0.1012
+      "score": 0.1051
     },
     {
       "rule_id": "SEG-001",
       "title": "Component Segmentation Confidence",
       "text": "Monolithic meshes should not be force-labeled as upper, laces, tongue, midsole, or outsole. Report segmentation uncertainty and request cleaner component hierarchy, material groups, or CAD source files for production-grade BOM extraction.",
-      "score": 0.0504
+      "score": 0.0523
     },
     {
       "rule_id": "MAT-002",
       "title": "Material Metadata Completeness",
       "text": "If a GLB lacks explicit material type, supplier code, or texture source metadata, mark material confidence as limited. Do not infer leather, mesh, foam, or rubber beyond what material names, textures, or source documentation support.",
-      "score": 0.0217
+      "score": 0.0225
     },
     {
       "rule_id": "MAT-001",
       "title": "Colorway Approval",
       "text": "RGB or texture-derived colors are useful for review but are not final factory color standards. Factory handoff should confirm approved Pantone, RAL, material swatch, or brand color code before production.",
-      "score": 0.0116
+      "score": 0.012
     }
   ],
   "run_manifest": {
-    "run_completed_at": "2026-05-24T10:12:45.656715+00:00",
+    "run_completed_at": "2026-05-24T13:28:08.341953+00:00",
     "input_path": "input\\flower_sneakers_shoe_scan.glb",
     "output_dir": "outputs\\samples\\flower_sneakers_shoe_scan",
     "seed": 42,
@@ -157,7 +165,15 @@
       "original_length_mm_assuming_meters": 26391.19,
       "target_length_mm": 280.0,
       "scale_factor": 0.01060959976445889,
-      "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+      "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length.",
+      "orientation_override": {
+        "applied": true,
+        "asset": "flower_sneakers_shoe_scan",
+        "operations": [
+          "swap_yz"
+        ],
+        "reason": "Consumer scan exports height and width ambiguously after length alignment; swap Y/Z after automatic normalization so Blender top and side views match footwear presentation."
+      }
     },
     "confidence_scores": {
       "geometry": 0.82,

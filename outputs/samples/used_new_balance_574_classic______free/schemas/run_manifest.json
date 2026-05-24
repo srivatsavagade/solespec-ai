@@ -1,5 +1,5 @@
 {
-  "run_completed_at": "2026-05-24T10:11:00.835506+00:00",
+  "run_completed_at": "2026-05-24T13:24:58.921346+00:00",
   "input_path": "input\\used_new_balance_574_classic______free.glb",
   "output_dir": "outputs\\samples\\used_new_balance_574_classic______free",
   "seed": 42,
@@ -18,7 +18,10 @@
     "original_length_mm_assuming_meters": 8182.91,
     "target_length_mm": 280.0,
     "scale_factor": 0.0342176562103202,
-    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length."
+    "reason": "Input units produced implausible footwear dimensions; rescaled longest axis to target footwear length.",
+    "orientation_override": {
+      "applied": false
+    }
   },
   "confidence_scores": {
     "geometry": 0.82,
