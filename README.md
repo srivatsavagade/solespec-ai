@@ -652,9 +652,11 @@ The pipeline was shaped around real GLB constraints: coordinate ambiguity, scale
 
 ## Setup
 
+Use Python 3.10 for the project environment. Some rendering/test dependencies are not available for the accidental Python 3.14 virtualenv path on Windows yet.
+
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
+py -3.10 -m venv .venv310
+.venv310\Scripts\activate
 pip install -r requirements.txt
 ```
 
