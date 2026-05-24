@@ -11,6 +11,9 @@ outputs/annotated/*
 !outputs/renders/
 outputs/renders/*
 !outputs/renders/*.png
+!outputs/blender_renders/
+outputs/blender_renders/*
+!outputs/blender_renders/*.png
 !outputs/schemas/
 outputs/schemas/*
 !outputs/schemas/*.json
@@ -20,7 +23,6 @@ outputs/technical_drawings/*
 !outputs/techpacks/
 outputs/techpacks/*
 !outputs/techpacks/*.pdf
-outputs/blender_renders/
 outputs/intermediate/
 outputs_*/
 *.log

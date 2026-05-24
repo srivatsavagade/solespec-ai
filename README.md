@@ -267,9 +267,11 @@ Deterministic systems handle correctness-critical geometry, while bounded agenti
 
 ## Visual Outputs
 
-### Perspective Render
+### Color Blender Render
 
-![Perspective render](outputs/renders/perspective.png)
+![Color Blender render](outputs/blender_renders/perspective.png)
+
+The TechPack PDFs use color render views for product reference. The black-and-white drawings are included separately as the 2D technical drawing capability.
 
 ### Measurement Overlay
 
@@ -716,6 +718,13 @@ This keeps production-critical geometry deterministic while using ML-style retri
 outputs/
 |-- intermediate/
 |   `-- <model>_normalized.glb
+|-- blender_renders/
+|   |-- render.png
+|   |-- perspective.png
+|   |-- side.png
+|   |-- top.png
+|   |-- front.png
+|   `-- back.png
 |-- renders/
 |   |-- top.png
 |   |-- side.png
