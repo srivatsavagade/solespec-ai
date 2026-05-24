@@ -142,7 +142,7 @@ Deterministic systems handle correctness-critical geometry, while bounded agenti
 | - Consistent framing                                               |
 |                                                                    |
 | Views Generated: perspective, side, top, front, back               |
-| Output Folder: outputs/renders/                                    |
+| Output Folder: outputs/blender_renders/                            |
 +--------------------------------------------------------------------+
                                        |
                                        v
@@ -502,7 +502,7 @@ Views generated:
 Output:
 
 ```text
-outputs/renders/
+outputs/blender_renders/
 |-- perspective.png
 |-- side.png
 |-- top.png
@@ -746,7 +746,7 @@ outputs/
 |   |-- used_new_balance_574_classic______free/
 |   |-- flower_sneakers_shoe_scan/
 |   `-- miles_morales_shoes/
-|       |-- renders/
+|       |-- blender_renders/
 |       |-- annotated/
 |       |-- technical_drawings/
 |       |-- schemas/
@@ -765,12 +765,6 @@ outputs/
 |   |-- top.png
 |   |-- front.png
 |   `-- back.png
-|-- renders/
-|   |-- top.png
-|   |-- side.png
-|   |-- front.png
-|   |-- back.png
-|   `-- perspective.png
 |-- annotated/
 |   `-- side_measurements.png
 |-- technical_drawings/

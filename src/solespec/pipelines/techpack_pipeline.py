@@ -83,7 +83,7 @@ class TechPackPipeline:
 
         renders = renderer.render_views(
             glb_path=normalized_glb_path,
-            output_dir=self.output_dir / "renders",
+            output_dir=self.output_dir / "blender_renders",
         )
 
         annotated_renders = OverlayGenerator().generate_measurement_overlays(

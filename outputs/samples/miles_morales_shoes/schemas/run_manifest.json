@@ -1,10 +1,10 @@
 {
-  "run_completed_at": "2026-05-24T09:09:13.595506+00:00",
+  "run_completed_at": "2026-05-24T10:14:09.294687+00:00",
   "input_path": "input\\miles_morales_shoes.glb",
   "output_dir": "outputs\\samples\\miles_morales_shoes",
   "seed": 42,
-  "python_version": "3.14.3",
-  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.10.11",
+  "platform": "Windows-10-10.0.26200-SP0",
   "selected_capabilities": [
     "multi_view_rendering",
     "geometry_measurement",

@@ -8,9 +8,7 @@ outputs/*
 !outputs/annotated/
 outputs/annotated/*
 !outputs/annotated/side_measurements.png
-!outputs/renders/
-outputs/renders/*
-!outputs/renders/*.png
+outputs/renders/
 !outputs/blender_renders/
 outputs/blender_renders/*
 !outputs/blender_renders/*.png

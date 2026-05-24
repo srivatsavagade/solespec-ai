@@ -1,6 +1,6 @@
 {
   "model_name": "miles_morales_shoes",
-  "generated_at": "2026-05-24T09:09:13.591268+00:00",
+  "generated_at": "2026-05-24T10:14:09.289655+00:00",
   "seed": 42,
   "measurements": {
     "length_mm": 280.0,
@@ -75,23 +75,23 @@
   "renders": [
     {
       "view_name": "top",
-      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\top.png"
+      "image_path": "outputs\\samples\\miles_morales_shoes\\blender_renders\\top.png"
     },
     {
       "view_name": "side",
-      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\side.png"
+      "image_path": "outputs\\samples\\miles_morales_shoes\\blender_renders\\side.png"
     },
     {
       "view_name": "front",
-      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\front.png"
+      "image_path": "outputs\\samples\\miles_morales_shoes\\blender_renders\\front.png"
     },
     {
       "view_name": "back",
-      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\back.png"
+      "image_path": "outputs\\samples\\miles_morales_shoes\\blender_renders\\back.png"
     },
     {
       "view_name": "perspective",
-      "image_path": "outputs\\samples\\miles_morales_shoes\\renders\\perspective.png"
+      "image_path": "outputs\\samples\\miles_morales_shoes\\blender_renders\\perspective.png"
     }
   ],
   "normalization_metadata": {
@@ -132,12 +132,12 @@
     }
   ],
   "run_manifest": {
-    "run_completed_at": "2026-05-24T09:09:13.595506+00:00",
+    "run_completed_at": "2026-05-24T10:14:09.294687+00:00",
     "input_path": "input\\miles_morales_shoes.glb",
     "output_dir": "outputs\\samples\\miles_morales_shoes",
     "seed": 42,
-    "python_version": "3.14.3",
-    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
     "selected_capabilities": [
       "multi_view_rendering",
       "geometry_measurement",

@@ -1,6 +1,6 @@
 {
   "model_name": "used_new_balance_574_classic______free",
-  "generated_at": "2026-05-24T09:06:02.443075+00:00",
+  "generated_at": "2026-05-24T10:11:00.788498+00:00",
   "seed": 42,
   "measurements": {
     "length_mm": 280.0,
@@ -75,23 +75,23 @@
   "renders": [
     {
       "view_name": "top",
-      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\top.png"
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\blender_renders\\top.png"
     },
     {
       "view_name": "side",
-      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\side.png"
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\blender_renders\\side.png"
     },
     {
       "view_name": "front",
-      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\front.png"
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\blender_renders\\front.png"
     },
     {
       "view_name": "back",
-      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\back.png"
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\blender_renders\\back.png"
     },
     {
       "view_name": "perspective",
-      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\renders\\perspective.png"
+      "image_path": "outputs\\samples\\used_new_balance_574_classic______free\\blender_renders\\perspective.png"
     }
   ],
   "normalization_metadata": {
@@ -138,12 +138,12 @@
     }
   ],
   "run_manifest": {
-    "run_completed_at": "2026-05-24T09:06:02.463866+00:00",
+    "run_completed_at": "2026-05-24T10:11:00.835506+00:00",
     "input_path": "input\\used_new_balance_574_classic______free.glb",
     "output_dir": "outputs\\samples\\used_new_balance_574_classic______free",
     "seed": 42,
-    "python_version": "3.14.3",
-    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
     "selected_capabilities": [
       "multi_view_rendering",
       "geometry_measurement",

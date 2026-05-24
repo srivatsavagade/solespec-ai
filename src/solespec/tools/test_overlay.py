@@ -11,15 +11,20 @@ from src.solespec.document_engine.overlay_generator import OverlayGenerator
 from src.solespec.schemas.techpack_schema import MeasurementSpec
 
 
-spec_path = PROJECT_ROOT / "outputs" / "schemas" / "techpack_spec.json"
+def main() -> None:
+    spec_path = PROJECT_ROOT / "outputs" / "schemas" / "techpack_spec.json"
 
-with spec_path.open("r", encoding="utf-8") as f:
-    spec = json.load(f)
+    with spec_path.open("r", encoding="utf-8") as f:
+        spec = json.load(f)
 
-measurements = MeasurementSpec(**spec["measurements"])
+    measurements = MeasurementSpec(**spec["measurements"])
 
-OverlayGenerator().generate_measurement_overlay(
-    image_path=PROJECT_ROOT / "outputs" / "renders" / "side.png",
-    output_path=PROJECT_ROOT / "outputs" / "annotated" / "side_overlay_test.png",
-    measurements=measurements,
-)
+    OverlayGenerator().generate_measurement_overlay(
+        image_path=PROJECT_ROOT / "outputs" / "blender_renders" / "side.png",
+        output_path=PROJECT_ROOT / "outputs" / "annotated" / "side_overlay_test.png",
+        measurements=measurements,
+    )
+
+
+if __name__ == "__main__":
+    main()

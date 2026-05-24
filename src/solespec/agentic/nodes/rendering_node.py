@@ -22,7 +22,7 @@ def rendering_node(state: TechPackState) -> TechPackState:
 
     renders = renderer.render_views(
         glb_path=normalized_glb_path,
-        output_dir=output_dir / "renders",
+        output_dir=output_dir / "blender_renders",
     )
 
     annotated_renders = OverlayGenerator().generate_measurement_overlays(
