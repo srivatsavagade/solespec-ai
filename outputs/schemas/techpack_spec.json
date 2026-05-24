@@ -75,23 +75,23 @@
   "renders": [
     {
       "view_name": "top",
-      "image_path": "outputs\\renders\\top.png"
+      "image_path": "outputs\\blender_renders\\top.png"
     },
     {
       "view_name": "side",
-      "image_path": "outputs\\renders\\side.png"
+      "image_path": "outputs\\blender_renders\\side.png"
     },
     {
       "view_name": "front",
-      "image_path": "outputs\\renders\\front.png"
+      "image_path": "outputs\\blender_renders\\front.png"
     },
     {
       "view_name": "back",
-      "image_path": "outputs\\renders\\back.png"
+      "image_path": "outputs\\blender_renders\\back.png"
     },
     {
       "view_name": "perspective",
-      "image_path": "outputs\\renders\\perspective.png"
+      "image_path": "outputs\\blender_renders\\perspective.png"
     }
   ],
   "normalization_metadata": {
@@ -139,7 +139,7 @@
     }
   ],
   "run_manifest": {
-    "run_completed_at": "2026-05-21T10:30:58.757836+00:00",
+    "run_completed_at": "2026-05-24T08:57:13.402683+00:00",
     "input_path": "input\\used_new_balance_574_classic______free.glb",
     "output_dir": "outputs",
     "seed": 42,
@@ -149,6 +149,7 @@
       "multi_view_rendering",
       "geometry_measurement",
       "material_colorway_extraction",
+      "technical_2d_drawings",
       "retrieval_grounded_manufacturing_review",
       "validation_confidence_scoring"
     ],
@@ -174,6 +175,7 @@
       "outputs\\schemas\\techpack_spec.json",
       "outputs\\techpacks\\cover_sheet.pdf",
       "outputs\\techpacks\\measurement_sheet.pdf",
+      "outputs\\techpacks\\technical_drawing_sheet.pdf",
       "outputs\\techpacks\\bom_colorway_sheet.pdf",
       "outputs\\techpacks\\validation_report.pdf"
     ],
@@ -183,6 +185,18 @@
     {
       "view_name": "side_measurements",
       "image_path": "outputs\\annotated\\side_measurements.png"
+    },
+    {
+      "view_name": "technical_side",
+      "image_path": "outputs\\technical_drawings\\side_technical_drawing.png"
+    },
+    {
+      "view_name": "technical_top",
+      "image_path": "outputs\\technical_drawings\\top_technical_drawing.png"
+    },
+    {
+      "view_name": "technical_front",
+      "image_path": "outputs\\technical_drawings\\front_technical_drawing.png"
     }
   ],
   "validation_issues": [
